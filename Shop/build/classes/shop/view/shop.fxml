@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1093.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shop.controller.AdministracijaController">
+   <children>
+      <GridPane prefHeight="702.0" prefWidth="1093.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="711.0" minWidth="10.0" prefWidth="695.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="363.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="355.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="355.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="498.0" minHeight="10.0" prefHeight="487.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="heading" alignment="CENTER" opacity="0.7" prefHeight="83.0" prefWidth="1094.0" text="Tvrtka Dell komerc d.o.o" textOverrun="CLIP" GridPane.columnSpan="2">
+               <font>
+                  <Font name="System Bold Italic" size="27.0" />
+               </font>
+               <effect>
+                  <Glow level="0.31" />
+               </effect>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#UrediTablica" prefHeight="36.0" prefWidth="161.0" text="Uredi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="130.0" top="150.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#ObrisiProizvod" prefHeight="36.0" prefWidth="161.0" text="Obriši" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="130.0" top="250.0" />
+               </GridPane.margin>
+            </Button>
+            <TableView fx:id="tablicaProizvoda" prefHeight="411.0" prefWidth="602.0" GridPane.rowIndex="2">
+              <columns>
+                <TableColumn fx:id="idTablica" prefWidth="58.0" text="id" />
+                <TableColumn fx:id="imeTablica" prefWidth="201.0" text="ime" />
+                  <TableColumn fx:id="kolicinaTablica" minWidth="0.0" prefWidth="118.0" text="kolicina" />
+                  <TableColumn fx:id="kategorijaTablica" prefWidth="186.0" text="kategorija" />
+                  <TableColumn fx:id="cijenaTablica" prefWidth="132.0" text="cijena" />
+              </columns>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="15.0" />
+               </GridPane.margin>
+            </TableView>
+            <Button mnemonicParsing="false" onAction="#DodajAdministracija" prefHeight="36.0" prefWidth="161.0" text="Dodaj" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="130.0" top="50.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="ḐodajBlag" mnemonicParsing="false" onAction="#DodajBlagajnika" prefHeight="36.0" prefWidth="161.0" text="Dodaj blagajnika" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="50.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#odjavise" prefHeight="36.0" prefWidth="161.0" text="Odjavi se" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="130.0" />
+               </GridPane.margin>
+            </Button>
+            <ChoiceBox fx:id="KategorijaIzbornik" prefHeight="25.0" prefWidth="183.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="370.0" left="120.0" />
+               </GridPane.margin>
+            </ChoiceBox>
+            <Button mnemonicParsing="false" onAction="#OdaberiKategoriju" prefHeight="29.0" prefWidth="71.0" text="Odaberi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="290.0" left="177.0" />
+               </GridPane.margin>
+            </Button>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="115.0" text="Kategorija" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="371.0" left="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#dodajKategoriju" prefHeight="25.0" prefWidth="122.0" text="Dodaj Kategoriju" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="466.0" left="75.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#ObrisiKategoriju" prefHeight="25.0" prefWidth="122.0" text="Obriši kategoriju" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="466.0" left="226.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#PregledBlagajnika" prefHeight="36.0" prefWidth="161.0" text="Pregled blagajnika" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="250.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
